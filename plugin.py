@@ -23,7 +23,7 @@ def add_line_id(content):
         try:
             p.attrib['id']
         except:
-            p.attrib['id'] = 'line.%s' % i
+            p.attrib['id'] = 'kobo.%s' % i
     return etree.tostring(root, encoding='utf-8')
 
     
