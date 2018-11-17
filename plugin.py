@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# target script
 
 import sys
 from lxml import etree
@@ -17,7 +16,7 @@ def run(bk):
 def add_line_id(content):
     parser = etree.XMLParser(resolve_entities=False, encoding='utf-8')
     root = etree.fromstring(content.encode('utf-8'), parser=parser)
-    body = root.xpath('//xhtml:p | //xhtml:img |//xhtml:h1 | //xhtml:h2 | //xhtml:h3 | //xhtml:h4 | //xhtml:h5 | //xhtml:h6', namespaces={'xhtml': XHTML_NAMESPACE})
+    body = root.xpath('//xhtml:p | //xhtml:img |//xhtml:h1 | //xhtml:h2 | //xhtml:h3 | //xhtml:h4 | //xhtml:h5 | //xhtml:h6| //xhtml:figcaption| //xhtml:caption', namespaces={'xhtml': XHTML_NAMESPACE})
 
     for i, p in enumerate(body):
         try:
